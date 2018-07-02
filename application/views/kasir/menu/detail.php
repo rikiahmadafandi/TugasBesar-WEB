@@ -42,3 +42,34 @@
 			<th>Jumlah Harga</th>
 			</tr>
 		<?php
+
+		$no=1;
+        foreach ($query3 as $d) { 
+		?>
+
+		<tr>
+			<td><?php echo $no++; ?></td>
+			<td><?php echo $d->judul; ?></td>
+			<td><?php echo $d->ppn; ?></td>
+			<td><?php echo $d->diskon; ?></td>
+			<td>Rp.<?php echo $d->harga_pokok; ?></td>
+			<td><?php echo $d->jumlah; ?></td>
+			<td>Rp.<?php echo $d->jumlah_harga; ?></td>
+			</tr>
+		<?php
+			}
+		?>
+		<tr>
+			<th class="text-right" colspan="6">Total Harga</th>
+			<td>
+				Rp.<?php echo number_format($query2->total,2); ?></td>
+		</tr>
+		</table>
+			<center>
+				<a href="<?php echo site_url('kasir/data_penjualan');?>" class="btn btn-success">Kembali</a>
+				<a href="<?php echo site_url('kasir/detail_print/'.$query2->id_jual); ?>" class="btn btn-primary"><span class="glyphicon 
+				glyphicon-print"></span></a>
+			</center>
+	</div>
+	
+<?php $this->load->view('kasir/footer');?>
