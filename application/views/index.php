@@ -42,7 +42,7 @@
 		<div class="col-md-5 col-md-offset-4">
 			<div class="panel panel-primary">
 				<div class="panel-heading">
-					<h3><span class="glyphicon glyphicon-book" aria-hidden="true"></span> Toko Buku Riki_Rhoma</h3>
+					<h3><span class="glyphicon glyphicon-book" aria-hidden="true"></span> Toko Buku Angling_Dharma</h3>
 					<h4>Login System</h4>
 					<p><span class="glyphicon glyphicon-road" aria-hidden="true"></span> Jl. K.H. MasMansur No:23 Bojonegoro</p>
 					<p><span class="glyphicon glyphicon-phone-alt" aria-hidden="true"></span> 085855558772 </p>
