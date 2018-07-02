@@ -36,6 +36,8 @@ class Admin extends CI_Controller {
 		$this->load->view('admin/menu/data_pegawai',$data);
 	}
 
+//--function buku--//
+
 	function data_buku()
 	{
 		$query = $this->Mbuku->getData_buku();
@@ -43,6 +45,11 @@ class Admin extends CI_Controller {
 					"query" => $query,
 				);
 		$this->load->view('admin/menu/data_buku',$data);
+	}
+
+	public function tambah_buku()
+	{
+		$this->load->view('admin/menu/tambah_buku');
 	}
 
 	function data_distributor()
