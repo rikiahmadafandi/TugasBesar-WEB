@@ -7,5 +7,8 @@ class Mbuku extends CI_model {
 		$query = $this->db->query("SELECT * FROM tb_buku");
 		return $query->result();
 	}
-
+	
+	function addBuku($input) {
+		$this->db->insert('tb_buku',$input);
+	}
 }
