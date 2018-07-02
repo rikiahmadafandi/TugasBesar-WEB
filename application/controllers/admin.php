@@ -36,6 +36,11 @@ class Admin extends CI_Controller {
 		$this->load->view('admin/menu/data_pegawai',$data);
 	}
 
+	public function tambah_pegawai()
+	{
+		$this->load->view('admin/menu/tambah_pegawai');
+	}
+
 //--function buku--//
 
 	function data_buku()
