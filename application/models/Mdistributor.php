@@ -8,4 +8,7 @@ class Mdistributor extends CI_model {
 		return $query->result();
 	}
 
+	function addDistributor($input) {
+		$this->db->insert('tb_distributor',$input);
+	}
 }

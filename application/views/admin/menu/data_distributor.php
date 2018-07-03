@@ -13,7 +13,7 @@
 		
 		
 		
-		<a class="btn btn-sm btn-success" href="?menu=tambah_distributor">Tambah Data</a>
+		<a class="btn btn-sm btn-success" href="<?php echo site_url('admin/tambah_distributor'); ?>">Tambah Data</a>
 		<button class="btn btn-sm btn-default">Jumlah Data <span class="badge"><?php //echo $jumlah; ?></span></button>
 		<a class="btn btn-sm btn-primary" href="?menu=data_distributor">refresh / all tampil data</a>
 	</div>

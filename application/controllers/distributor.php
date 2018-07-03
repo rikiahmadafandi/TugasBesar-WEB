@@ -3,7 +3,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class pegawai extends CI_Controller {
 
-function tambah_pegawai ()
+function tambah_distributor ()
 	{
 		$nama_distributor = $this->input->post('nama');
 		$alamat = $this->input->post('alamat');
