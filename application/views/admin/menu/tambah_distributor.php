@@ -1,9 +1,9 @@
 <?php $this->load->view('admin/header');?>
-<?php $this->load->view('admin/navigasi/navigasi_pegawai');?>
+<?php $this->load->view('admin/navigasi/navigasi_Distributor');?>
 	<div class="row">
 	<h3>Tambah Pegawai</h3>
 	<div class="col-md-8">
-	<form method="post" action="<?php echo site_url('pegawai/tambah_pegawai');?>">
+	<form method="post" action="<?php echo site_url('distributor/tambah_distributor');?>">
 	  <div class="form-group">
 		<label>Nama</label>
 		<input name="nama_distributor" type="text" class="form-control" placeholder="Nama" required="required">
@@ -16,6 +16,9 @@
 		<label>Telephon</label>
 		<input name="telephon" type="text" class="form-control" placeholder="Nomor Telephon" required="required">
 	  </div>
+	  <input name="fsimpan" type="submit" class="btn btn-sm btn-success" value="Simpan">
+		
+		<a class="btn btn-sm btn-danger" href="<?php echo site_url('admin/data_distributor');?>">Kembali</a>
 	  
 	  
   </form>

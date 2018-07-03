@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class pegawai extends CI_Controller {
+class Distributor extends CI_Controller {
 
 function tambah_distributor ()
 	{
