@@ -4,10 +4,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Kasir extends CI_Controller {
 	public function __construct() {
 		parent::__construct();
-		if ($this->session->userdata('username')==""
+		if ($this->session->userdata('username')=="" || ($this->session->userdata('akses')!="kasir") || ($this->session->userdata('id_kasir')!= $this->session->userdata('id_kasir'))) {
 			redirect('login');
 	}
-}
+
 	function data_penjualan()
 	{
 		$query = $this->Minput->getData_penjualan();
@@ -31,6 +31,12 @@ class Kasir extends CI_Controller {
 				);
 
 		$this->load->view('kasir/menu/input_barang', $data);
+	}
+	public function index()
+	{
+		$id_kasir= $this->session->userdata('id_kasir');
+		$user= $this->session->userdata('username');
+		$this->load->view('kasir/menu/dashboard');
 	}
 }
 
