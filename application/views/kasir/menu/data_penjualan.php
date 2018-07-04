@@ -46,7 +46,7 @@
 			<td><?php echo $d->kembali; ?></td>
 			<td><?php echo $d->tanggal; ?></td>
 			<td>
-				<a class="btn btn-success" href="?menu=detail&id_jual=<?php //echo $data['id_jual']; ?>">detail</a>
+				<a class="btn btn-success" href="<?php echo site_url('kasir/detail/'.$d->id_jual); ?>">detail</a>
 			</td>
 			
 		</tr>
