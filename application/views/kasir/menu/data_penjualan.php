@@ -6,10 +6,6 @@
 	<div class="col-xs-12 col-md-8">
 		<h3>Tabel Penjualan</h3>
 		
-		<?php
-			//$qjumlah = mysqli_query($koneksi, "SELECT * FROM tb_jual");
-			//$jumlah = mysqli_num_rows($qjumlah);
-		?>
 		
 		<button class="btn btn-sm btn-default">Jumlah Data <span class="badge"><?php //echo $jumlah; ?></span></button>
 		<a class="btn btn-sm btn-primary" href="?menu=data_penjualan">refresh / all tampil data</a>
@@ -39,41 +35,6 @@
 			
 	</thead>
 	<tbody>
-	<?php/*
-	$no =1;
-	$inputan = $_POST['inputan'];
-	if($_POST['cari']){
-		if($inputan==""){
-			$q = mysqli_query($koneksi,"SELECT tb_jual.*,tb_kasir.* FROM tb_jual INNER JOIN tb_kasir ON tb_kasir.id_kasir=tb_jual.id_kasir");
-		}
-		else if($inputan!=""){
-			$q = mysqli_query($koneksi,"SELECT tb_jual.*,tb_kasir.* FROM tb_jual 
-			INNER JOIN tb_kasir ON tb_kasir.id_kasir=tb_jual.id_kasir WHERE nama LIKE '%$inputan%'");
-	}
-	}
-else{
-	$q = mysqli_query($koneksi,"SELECT tb_jual.*,tb_kasir.* FROM tb_jual INNER JOIN tb_kasir ON tb_kasir.id_kasir=tb_jual.id_kasir ");
-	}
-		$cek = mysqli_num_rows($q);
-		
-		if($cek < 1){*/
-			?>
-			<!--<tr>
-			<td colspan="7">
-			<center>
-			Data yang Anda Cari Tidak Tersedia
-				<a href="" class="btn btn-sm btn-success"><span class="glyphicon glyphicon-refresh"></span></a>
-			</center>
-			</td>
-			<tr>-->
-			<?php/*
-		}
-		else{
-			
-		
-		
-	while($data = mysqli_fetch_array($q)){*/
-		?>
 		<?php 
 		$no=1;
         foreach ($query as $d) { ?>

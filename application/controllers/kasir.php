@@ -10,7 +10,7 @@ class Kasir extends CI_Controller {
 
 	function data_penjualan()
 	{
-		$query = $this->Minput->getData_penjualan();
+		$query = $this->MPenjualan->getData_penjualan();
 		$data = array(
 					"query" => $query,
 				);
@@ -20,9 +20,6 @@ class Kasir extends CI_Controller {
 
 	function input_barang($kode)
 	{
-		//$pasok = $this->Mdistributor->tampil_pemasokan();
-		//$distribusi = $pasok[0]['id_distributor'];
-		//$buku = $pasok[0]['id_buku'];
 		$buku=$this->Minput->pilih_buku("where id_buku ='$kode'");
 		$data = array(
 				"id_buku"		=> $buku[0]['id_buku'],
