@@ -41,6 +41,20 @@ class Admin extends CI_Controller {
 		$this->load->view('admin/menu/tambah_pegawai');
 	}
 
+	public function edit_pegawai($kode)
+	{
+		$buku=$this->Mpegawai->edit_pegawai("where id_kasir ='$kode'");
+		$data = array(
+				"id_kasir"		=> $buku[0]['id_kasir'],
+				"nama" 		=> $buku[0]['nama'],
+				"alamat" 		=> $buku[0]['alamat'],
+				"telephon" 		=> $buku[0]['telephon'],
+				"status" 		=> $buku[0]['status'],
+				);
+
+		$this->load->view('admin/menu/edit_pegawai', $data);
+	}
+
 //--function buku--//
 
 	function data_buku()
@@ -69,6 +83,19 @@ class Admin extends CI_Controller {
 	public function tambah_distributor()
 	{
 		$this->load->view('admin/menu/tambah_distributor');
+	}
+
+	public function edit_distributor($kode)
+	{
+		$buku=$this->Mdistributor->edit_distributor("where id_distributor ='$kode'");
+		$data = array(
+				"id_distributor"		=> $buku[0]['id_distributor'],
+				"nama" 		=> $buku[0]['nama_distributor'],
+				"alamat" 		=> $buku[0]['alamat'],
+				"telephon" 		=> $buku[0]['telephon'],
+				);
+
+		$this->load->view('admin/menu/edit_distributor', $data);
 	}
 
 	function data_pemasukan()

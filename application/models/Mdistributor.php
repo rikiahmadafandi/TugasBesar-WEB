@@ -11,7 +11,7 @@ class Mdistributor extends CI_model {
 	function addDistributor($input) {
 		$this->db->insert('tb_distributor',$input);
 	}
-	
+
 	function nama_distribusi() {
 
 		$query = $this->db->query("SELECT tb_buku.*,tb_distributor.*,tb_pasok.* FROM tb_pasok 
@@ -24,5 +24,18 @@ class Mdistributor extends CI_model {
 	function tampil_pemasokan() {
 		$query = $this->db->query("SELECT * FROM tb_pasok");
 		return $query->result();
+	}
+	function simpan_editdistributor($update,$primary_key) {
+		$this->db->update('tb_distributor',$update,$primary_key);
+	}
+
+	function edit_distributor($where = " ") {
+		 $query = $this->db->query("SELECT * FROM tb_distributor ".$where);
+		 return $query->result_array();
+	}
+
+	function hapus_distributor($data) {
+		$this->db->where('id_distributor',$data['id_distributor']);
+		$this->db->delete('tb_distributor');
 	}
 }
