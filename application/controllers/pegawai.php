@@ -55,4 +55,62 @@ function tambah_pegawai ()
 		$this->Mpegawai->hapus_pegawai($data);
 		redirect('admin/data_pegawai');
 	}
+
+	function eksekusi_profil()
+	{
+		$nama = $this->input->post('nama');
+		$alamat = $this->input->post('alamat');
+		$telephon = $this->input->post('telephon');
+		$id_kasir = $this->session->userdata('id_kasir');
+
+		$primary_key = array ( 
+			'id_kasir' => $id_kasir,
+			);
+		$update = array (
+					'nama' => $nama,
+					'alamat' => $alamat,
+					'telephon' => $telephon,
+			);
+
+		$this->Mpegawai->eksekusi_profil($update,$primary_key);
+		redirect('admin/profil');
+	}
+
+	function edit_passprofil()
+	{
+		$pass1 = $this->input->post('pass1');
+		$pass2 = $this->input->post('pass2');
+		$pass_awal = $this->input->post('pass_awal');
+
+		$data = array (
+					'pass' => md5($pass1),
+					'id_kasir' => $this->session->userdata('id_kasir'),
+			);
+
+		if(($pass1 == $pass2) && (md5($pass_awal) == $this->session->userdata('password'))) {
+			$this->Mpegawai->edit_passprofil($data);
+			redirect('admin/profil');
+		}
+		else{
+			echo "<script>alert('Harap periksa ulang password baru dan password lama anda kembali!');history.go(-1);</script>";
+		}
+	}
+	function edit_userprofil()
+	{
+		$id_kasir = $this->session->userdata('id_kasir');
+		$userbaru = $this->input->post('userbaru');
+		$pass = $this->input->post('pass');
+
+		$data = array(
+					'id_kasir' => $id_kasir,
+					'userbaru' => $userbaru,
+					);
+
+		if(md5($pass)==$this->session->userdata('password')){
+			$this->Mpegawai->edit_userprofil($data);
+			redirect('admin/profil');
+		}
+		else {
+			echo "<script>alert('Gagal mengganti username, harap periksa password anda!');history.go(-1);</script>";
+		}
 }

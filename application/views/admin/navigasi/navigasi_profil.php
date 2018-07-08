@@ -8,13 +8,13 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="index.php">ADMIN | TOKO BUKU (<?php //echo $profil['nama']; ?>)</a>
+          <a class="navbar-brand" href="<?php echo site_url('admin');?>">ADMIN | TOKO BUKU (<?php echo $this->session->userdata('username'); ?>)</a>
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="?menu=dashboard">Dashboard</a></li>
-             <li><a href="<?php echo site_url('admin/profil');?>">Profile</a></li>
-          </ul>
+            <li><a href="<?php echo site_url('admin');?>">Dashboard</a></li>
+            <li><a href="<?php echo site_url('admin/profil');?>">Profile</a></li>
+            </ul>
           
         </div>
       </div>
@@ -33,14 +33,14 @@
 			<li><a href="<?php echo site_url('admin/data_pegawai')?>">Data Pegawai</a></li>
 			<li><a href="<?php echo site_url('admin/data_buku')?>">Buku</a></li>
 			<li><a href="<?php echo site_url('admin/data_distributor')?>">Distributor</a></li>
-			<li  class="active"><a href="<?php echo site_url('admin/data_pemasukan')?>">Riwayat Pemasukan Buku</a></li>
+			<li><a href="<?php echo site_url('admin/data_pemasukan')?>">Riwayat Pemasukan Buku</a></li>
 			<li><a href="<?php echo site_url('admin/data_penjualan')?>">Laporan Penjualan</a></li>
           </ul>
 		 
 		  <ul class="nav nav-sidebar">
-		 <li class="active"><a onclick="return confirm('anda akan keluar?')"<a href="<?php echo site_url('logout_admin/logout')?>">
-       <span class="glyphicon glyphicon-log-out" aria-hidden="true"></span>
-      LogOut</a></li>
+		  <li class="active"><a onclick="return confirm('anda akan keluar?')"<a href="<?php echo site_url('logout_admin/logout')?>">
+			 <span class="glyphicon glyphicon-log-out" aria-hidden="true"></span>
+			LogOut</a></li>
  
         </div>
         <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">

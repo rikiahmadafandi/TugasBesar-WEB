@@ -116,5 +116,28 @@ class Admin extends CI_Controller {
 				);
 		$this->load->view('admin/menu/data_penjualan',$data);
 	}
+
+	function profil()
+	{
+		$id_kasir= $this->session->userdata('id_kasir');
+		$query = $this->db->where('id_kasir', $id_kasir)->get('tb_kasir')->row_array();
+		// $query = $this->Mpegawai->getData_profil( "where id_kasir = '$id_kasir'");
+		$data = array(
+					"query" => $query,
+				);
+		$this->load->view('admin/menu/profil',$data);
+	}
+
+	function edit_profil()
+	{
+		$id_kasir = $this->session->userdata('id_kasir');
+		$query = $this->Mpegawai->edit_profil("where id_kasir = '$id_kasir'");
+
+		$data = array (
+					'query' => $query,
+			);
+
+		$this->load->view('admin/menu/edit_profil',$data);
+	}
 }
 
