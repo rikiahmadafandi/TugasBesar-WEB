@@ -29,4 +29,7 @@ function tampil_proses() {
 		$query=$this->db->query("SELECT tb_penjualan.*,tb_buku.* FROM tb_penjualan INNER JOIN tb_buku ON tb_buku.id_buku = tb_penjualan.id_buku ".$where);
 		return $query->result();
 	}
+	function update_dtstok($update,$primary_key) {
+		$this->db->update('tb_buku',$update,$primary_key);
+	}
 }

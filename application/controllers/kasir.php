@@ -48,5 +48,32 @@ class Kasir extends CI_Controller {
 
 		$this->load->view('kasir/menu/detail',$data);
 	}
+	function detail_print($kode) {
+		$id_jual = $kode; // variabel untuk menyingkat penulisan kode
+		$query2 = $this->Minput->print1("where id_jual = '$id_jual'"); //pemanggilan 1
+		$query3 = $this->Minput->print2("where id_jual = '$id_jual'"); // pemanggilan 2
+
+		$data = array(
+					'query2' => $query2,
+					'query3' => $query3,
+					);
+
+		$this->load->view('kasir/menu/print',$data);
+	}
+	
+//-----------------perintah print-------------------
+	function print_doc() {
+		$query1 = $this->Minput->on_print();   //pemilihan id otomatis
+		$id_jual = $query1->id_jual; // variabel untuk menyingkat penulisan kode
+		$query2 = $this->Minput->print1("where id_jual = '$id_jual'"); //pemanggilan 1
+		$query3 = $this->Minput->print2("where id_jual = '$id_jual'"); // pemanggilan 2
+
+		$data = array(
+					'query2' => $query2,
+					'query3' => $query3,
+					);
+
+		$this->load->view('kasir/menu/print',$data);
+	}
 }
 
