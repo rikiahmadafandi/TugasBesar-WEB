@@ -71,6 +71,40 @@ class Admin extends CI_Controller {
 		$this->load->view('admin/menu/tambah_buku');
 	}
 
+	public function pasok_buku($kode)
+	{
+		$buku=$this->Mbuku->pasok_buku("where id_buku ='$kode'");
+		$distributor=$this->Mbuku->pilih_distributor();
+		$data = array(
+				"id_buku"		=> $buku[0]['id_buku'],
+				"judul" 		=> $buku[0]['judul'],
+				"stok" 			=> $buku[0]['stok'],
+				"distributor"	=> $distributor,
+				);
+
+		$this->load->view('admin/menu/input_pemasukan', $data);
+	}
+
+	public function edit_buku($kode)
+	{
+		$buku=$this->Mbuku->edit_buku("where id_buku ='$kode'");
+		$data = array(
+				"id_buku"		=> $buku[0]['id_buku'],
+				"judul" 		=> $buku[0]['judul'],
+				"noisbn" 		=> $buku[0]['noisbn'],
+				"penulis" 		=> $buku[0]['penulis'],
+				"penerbit" 		=> $buku[0]['penerbit'],
+				"tahun" 		=> $buku[0]['tahun'],
+				"stok" 			=> $buku[0]['stok'],
+				"harga_pokok" 	=> $buku[0]['harga_pokok'],
+				"harga_jual" 	=> $buku[0]['harga_jual'],
+				"ppn" 			=> $buku[0]['ppn'],
+				"diskon" 		=> $buku[0]['diskon'],
+				);
+
+		$this->load->view('admin/menu/edit_buku', $data);
+	}
+	
 	function data_distributor()
 	{
 		$query = $this->Mdistributor->getData_distributor();
