@@ -7,10 +7,10 @@ class Kasir extends CI_Controller {
 		if ($this->session->userdata('username')=="" || ($this->session->userdata('akses')!="kasir") || ($this->session->userdata('id_kasir')!= $this->session->userdata('id_kasir'))) {
 			redirect('login');
 	}
-
+}
 	function data_penjualan()
 	{
-		$query = $this->MPenjualan->getData_penjualan();
+		$query = $this->Minput->getData_penjualan();
 		$data = array(
 					"query" => $query,
 				);
