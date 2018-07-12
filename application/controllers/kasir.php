@@ -76,4 +76,4 @@ class Kasir extends CI_Controller {
 		$this->load->view('kasir/menu/print',$data);
 	}
 }
-
+}
