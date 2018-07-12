@@ -32,4 +32,9 @@ function tampil_proses() {
 	function update_dtstok($update,$primary_key) {
 		$this->db->update('tb_buku',$update,$primary_key);
 	}
+
+	function getData_penjualan() {
+		$query = $this->db->query("SELECT tb_jual.*,tb_kasir.* FROM tb_jual INNER JOIN tb_kasir ON tb_kasir.id_kasir=tb_jual.id_kasir ");
+		return $query->result();
+	}
 }
