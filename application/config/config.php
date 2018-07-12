@@ -23,15 +23,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | a PHP script and you can easily do that on your own.
 |
 */
-<<<<<<< HEAD
 
 $config['base_url'] = 'http://localhost:8080/TugasBesar-WEB';
-=======
-
-$config['base_url'] = 'http://localhost:8080/TugasBesar-WEB';
-
-
->>>>>>> 358d4940f50813aee08d3f0e9146d64c91016fa4
 
 /*
 |--------------------------------------------------------------------------
