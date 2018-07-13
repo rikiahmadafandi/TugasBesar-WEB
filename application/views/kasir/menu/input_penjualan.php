@@ -1,24 +1,3 @@
-<?php/*
-	$id_buku = $_GET['id_buku'];
-	$qbuku = mysqli_query($koneksi,"SELECT * FROM tb_buku WHERE id_buku='$id_buku'");
-	$buku = mysqli_fetch_array($qbuku);
-	
-	$qkode = mysqli_query($koneksi,"SELECT max(id_jual) from tb_jual");
-	$kode = mysqli_fetch_array($qkode);
-	if($kode)
-	{
-		$nilai = $kode[0];
-		$nilai = substr($nilai, 3);
-		$nilai =(int)$nilai;
-		$kodebaru = $nilai+1;
-		$kode_otomatis = "PJN".str_pad($kodebaru,4,"0",STR_PAD_LEFT);
-	}
-	else
-	{
-		$kode_otomatis ="PJN0001";
-	}*/
-	
-	?>
 
 <?php $this->load->view('kasir/header');?>
 <?php $this->load->view('kasir/navigasi/navigasi_input');?>
@@ -30,22 +9,7 @@
 		<input type="number" max="<?php //echo $stok; ?>" name="jumlah" placeholder="jumlah beli max <?php //echo $stok; ?>" class="form-control">
 <input type="submit" name="tambah" value="tambah ke keranjang" class="btn btn-primary">
 		</form>
-		<?php/*
-		if(isset($_POST['tambah'])){
-			$jumlah = $_POST['jumlah'];
-			$id_kasir = $profil['id_kasir'];
-			$jumlah_harga = $buku['harga_pokok'] * $jumlah;
-			mysqli_query($koneksi,"INSERT INTO tb_keranjang(id_buku,id_kasir,jumlah,jumlah_harga) VALUES('$id_buku','$id_kasir','$jumlah','$jumlah_harga')");
-			$updatestok = $buku['stok'] - $jumlah;
-			mysqli_query($koneksi," UPDATE tb_buku SET stok='$updatestok' WHERE id_buku='$id_buku'");*/
-		?>
-			<!--<div class="alert alert-success">
-				Berhasil Menambah Keranjang
-			</div>
-			<meta http-equiv="refresh" content="1; url='?menu=input_penjualan'">-->
-		<?php
-		//}
-		?>
+		
 		<hr>
 		<h4> <span class="glyphicon glyphicon-shopping-cart"></span> Keranjang</h4>
 		<table class="table table-bordered">

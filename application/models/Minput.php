@@ -37,4 +37,15 @@ function tampil_proses() {
 		$query = $this->db->query("SELECT tb_jual.*,tb_kasir.* FROM tb_jual INNER JOIN tb_kasir ON tb_kasir.id_kasir=tb_jual.id_kasir ");
 		return $query->result();
 	}
+	function getData_keranjang() {
+		$query = $this->db->query("SELECT * FROM tb_keranjang");
+		return $query->num_rows();
+	}
+	function keranjang($data) {
+		$this->db->insert('tb_keranjang',$data);
+	}
+	function tampil_proses() {
+		$query = $this->db->query("SELECT * FROM tb_jual order by id_jual desc");
+		return $query->row();
+	}
 }

@@ -75,5 +75,23 @@ class Kasir extends CI_Controller {
 
 		$this->load->view('kasir/menu/print',$data);
 	}
-}
+
+
+	function input_penjualan()
+		{	
+			$keranjang = $this->Minput->getData_keranjang();
+			$query= $this->Minput->tampil_keranjang();
+			$query2 = $this->Minput->tampil_proses();
+			$query3 = $this->Minput->query3();
+			$data = array(
+						"query" => $query,
+						//"tampil" => $tampil,
+						"query3" =>$query3,
+						"query2" => $query2,
+						"keranjang" => $keranjang,
+					);
+			
+			$this->load->view('kasir/menu/input_penjualan',$data);//,$data);
+		}
+
 }
