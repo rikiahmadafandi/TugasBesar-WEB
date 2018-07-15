@@ -15,6 +15,8 @@ class Login extends CI_Controller {
 			 foreach ($hasil->result() as $sess) {
 				$sess_data['username'] = $sess->username;
 				$sess_data['akses'] = $sess->akses;
+				$sess_data['id_kasir'] = $sess->id_kasir;
+				$sess_data['password'] = $sess->password;
 				$this->session->set_userdata($sess_data);
 			}
 			if ($this->session->userdata('akses')=='admin') {

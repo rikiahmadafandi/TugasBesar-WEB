@@ -10,3 +10,4 @@ class Logout_kasir extends CI_Controller {
 	}
 }
 
+?>

@@ -2,24 +2,31 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Distributor extends CI_Controller {
-
-function tambah_distributor ()
-	{
+	function simpan_editdistributor() {
 		$nama_distributor = $this->input->post('nama');
 		$alamat = $this->input->post('alamat');
 		$telephon = $this->input->post('telephon');
-		
+		$id_distributor = $this->input->post('id_distributor');
 
-		$input = array (
-					'nama_distributor'		=> $nama_distributor,
-					'alamat'				=> $alamat,
-					'telephon'				=> $telephon
-					
+		$primary_key = array (
+					'id_distributor' => $id_distributor,
 			);
-		$this->Mdistributor->addDistributor($input);
+		$update = array (
+					'nama_distributor' => $nama_distributor,
+					'alamat' => $alamat,
+					'telephon' => $telephon,
+			);
+		$this->Mdistributor->simpan_editdistributor($update,$primary_key);
 		redirect('admin/data_distributor');
 	}
-	function addDistributor($input) {
-		$this->db->insert('tb_distributor',$input);
+
+	function hapus_distributor($id_distributor)
+	{
+		$data['id_distributor']=$id_distributor;
+		
+		$this->Mdistributor->hapus_distributor($data);
+		redirect('admin/data_distributor');
 	}
+
 }
+?>

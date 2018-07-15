@@ -50,8 +50,29 @@
 				  <input type="submit" name="edit_user" value="simpan" class="btn btn-sm btn-success">
 	
 				</form>
-
-			?>
+				
+				
+				<?php
+				/*	if(isset($_POST['edit_user'])){
+						$userbaru = $_POST['userbaru'];
+						$pass = $_POST['pass'];
+					    if(md5($pass)==$profil['password']){
+						mysqli_query($koneksi,"UPDATE tb_kasir SET username='$userbaru' WHERE id_kasir='$profil[id_kasir]'");
+						?>
+						<script type="text/javascript">
+							alert('username anda berhasil dirubah');
+							document.location.href="../inc/logout.php";
+							</script>
+							
+						<?php
+						
+						}
+					else{
+						echo "Password Anda Salah";
+					}
+					}
+					*/
+				?>
 				</fieldset>
 				<hr>
 				
@@ -77,6 +98,32 @@
 				  <input type="submit" name="edit_password" value="simpan" class="btn btn-sm btn-success">
 	
 				</form>
+				
+					<?php
+				/*	if(isset($_POST['edit_password'])){
+						$pass1 = md5($_POST['pass1']);
+						$pass2 = md5($_POST['pass2']);
+						$pass = $_POST['pass_awal'];
+						if($pass1 != $pass2){
+							echo "password konfirmasi tidak cocok";
+						}
+						else {
+						if(md5($pass)==$profil['password']){
+						mysqli_query($koneksi,"UPDATE tb_kasir SET password='$pass1' WHERE id_kasir='$profil[id_kasir]'");
+						?>
+						<script type="text/javascript">
+							alert('username anda berhasil dirubah');
+							document.location.href="../inc/logout.php";
+							</script>
+							
+						<?php
+						
+						}
+					else {
+						echo "Password Anda Salah |";
+					}
+					}
+					}	*/
 				?>
 				</fieldset>
 				</div>

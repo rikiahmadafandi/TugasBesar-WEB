@@ -33,3 +33,4 @@ class Mdashboard extends CI_model {
 	}
 
 }
+?>

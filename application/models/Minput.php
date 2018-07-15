@@ -86,3 +86,4 @@ class Minput extends CI_model {
 	}
 
 }
+?>

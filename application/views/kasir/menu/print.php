@@ -17,7 +17,7 @@
 	<div style="width: 45%; float: left;">
 	<table class="table table-condensed">
 		<tr>
-			<th>Kode Penjualan</th> <td><?php echo $query2->id_jual; ?></td>
+			<th>Kode Penjualan</th> <td><?php echo $query2 ->id_jual; ?></td>
 		</tr>
 		<tr>
 			<th>Kasir</th> <td><?php echo $query2->nama; ?></td>
