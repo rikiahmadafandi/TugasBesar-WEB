@@ -97,18 +97,18 @@ function tambah_pegawai ()
 	}
 	function edit_userprofil()
 	{
-		$id_kasir = $this->session->userdata('id_kasir');
+		$id_kasir = $this->session->userdata('username');
 		$userbaru = $this->input->post('userbaru');
 		$pass = $this->input->post('pass');
 
 		$data = array(
-					'id_kasir' => $id_kasir,
+					'username' => $id_kasir,
 					'userbaru' => $userbaru,
 					);
 
 		if(md5($pass)==$this->session->userdata('password')){
 			$this->Mpegawai->edit_userprofil($data);
-			redirect('admin/profil');
+			redirect('login');
 		}
 		else {
 			echo "<script>alert('Gagal mengganti username, harap periksa password anda!');history.go(-1);</script>";
