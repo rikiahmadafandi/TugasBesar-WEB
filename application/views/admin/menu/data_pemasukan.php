@@ -13,20 +13,10 @@
 		<h3>Riwayat Pemasukan Buku</h3>
 		
 		
-		<button class="btn btn-sm btn-default">Jumlah Data <span class="badge"><?php //echo $jumlah; ?></span></button>
 		<a class="btn btn-sm btn-primary" href="?menu=data_pemasukan">refresh / all tampil data</a>
 		
 	</div>
-  <div class="col-xs-6 col-md-4">
-  <form method="post">
-      <div class="input-group">
-	<input name="inputan" type="text" class="form-control" placeholder="Cari Pemasukan ">
-      <span class="input-group-btn">
-        <input name="cari" class="btn btn-default" value="cari" type="submit">
-      </span>
-    </div>
-	<form><!-- /input-group -->
-  </div><!-- /.col-lg-6 -->
+  
 	<br>
 	<table class="table table-bordered" id="tabel_data">
 	<thead>
@@ -43,7 +33,7 @@
 	<tbody>
 		<?php 
         $no=1;
-        foreach ($query as $d) { 
+        foreach ($nama_distributor as $d) { 
         ?>
 		<tr class="warning">
 			<td><?php echo $no++; ?></td>

@@ -1,16 +1,6 @@
 <?php $this->load->view('admin/header');?>
 <?php $this->load->view('admin/navigasi/navigasi_buku');?>
 
-
-	
-	
-	<?php/*
-		$idbuku = $_GET['id_buku'];
-		$qbuku = mysqli_query($koneksi, "SELECT * FROM tb_buku WHERE id_buku='$idbuku'");
-		$data = mysqli_fetch_array($qbuku);*/
-		?>
-
-	
   	
 	<div class="row">
 	<h3>Edit Buku</h3>
