@@ -9,7 +9,7 @@
 <head>
   
 </head>
-<center>//
+<center>
 <h1>Toko Buku</h1>
 </center>
 	
