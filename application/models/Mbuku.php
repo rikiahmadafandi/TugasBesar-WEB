@@ -2,16 +2,6 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Mbuku extends CI_model {
-	
-	function getData_buku() {
-		$query = $this->db->query("SELECT * FROM tb_buku");
-		return $query->result();
-	}
-	
-	function addBuku($input) {
-		$this->db->insert('tb_buku',$input);
-	}
-
 	function stok_update($update_stok,$primary_key) {
 		$this->db->update('tb_buku',$update_stok,$primary_key);
 	}
@@ -40,7 +30,17 @@ class Mbuku extends CI_model {
 		 return $query->result_array();
 	}
 
+	function getData_buku() {
+		$query = $this->db->query("SELECT * FROM tb_buku");
+		return $query->result();
+	}
+
+	function addBuku($input) {
+		$this->db->insert('tb_buku',$input);
+	}
+
 	function simpan_editBuku($update,$primary_key) {
 		$this->db->update('tb_buku',$update,$primary_key);
 	}
+
 }

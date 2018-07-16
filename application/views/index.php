@@ -35,7 +35,7 @@
 	</head>
 	 
 
-  <body  background="<?php echo base_url();?>assets/img/e.jpg" Style="width:100%;height:100%;">
+  <body  background="<?php echo base_url();?>assets/img/2.jpg" Style="width:100%;height:100%;">
  <div class="container">
   
 	  <center>
@@ -75,9 +75,9 @@
 				</div>
 			</div>
 		</div>
-		<marquee width="1000" direction="right"><img src="1.jpg" height="100"> <img src="2.jpg" height="100">
-  <img src="4.png" height="100"></marquee> <div class="container">
-  
+		<!-- <marquee width="1000" direction="right"><img src="1.jpg" height="100"> <img src="2.jpg" height="100">
+  <img src="4.png" height="100"></marquee> --> <!-- <div class="container">
+   -->
       </center>
     </div> 
 	</body>

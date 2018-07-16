@@ -1,5 +1,5 @@
-<?php $this->load->view('admin/header');?>
-<?php $this->load->view('admin/navigasi/navigasi_profil');?>
+<?php $this->load->view('kasir/header');?>
+<?php $this->load->view('kasir/navigasi/navigasi_profil');?>
 	<h3>Profin Anda</h3>
 		<div class="col-md-6">
 			<div class="panel panel-info">
@@ -8,15 +8,14 @@
 				</div>
 				<div class="panel-body">
 					<table class="table" cellpadding="8"  cellspacing="8">
-				
 				<tr>
-					<th>Nama</th><td>:</td><td><?php echo $query['nama']; ?></td>
+					<th>Nama</th><td>:</td><td><?php echo $query->nama; ?></td>
 				</tr>
 				<tr>
-					<th>Alamat</th><td>:</td><td><?php echo $query['alamat']; ?></td>
+					<th>Alamat</th><td>:</td><td><?php echo $query->alamat; ?></td>
 				</tr>
 				<tr>
-					<th>Telephon</th><td>:</td><td><?php echo $query['telephon']; ?></td>
+					<th>Telephon</th><td>:</td><td><?php echo $query->telephon; ?></td>
 				</tr>
 				</table>
 				<a class="btn btn-sm btn-primary" href="<?php echo site_url('admin/edit_profil');?>">Edit Data Saya</a>
@@ -31,11 +30,11 @@
 				<div class="panel-body">
 				<fieldset>
 				<legend>Edit Username</legend>
-				<form class="form" method="post" action="<?php echo site_url('pegawai/edit_userprofil');?>">
+				<form class="form" method="post" action="<?php echo site_url('pegawai/edit_userkasir');?>">
 				
 				<div class="input-group">
 				  <span class="input-group-addon">User Saat Ini</span>
-				  <input type="text" readonly class="form-control" value="<?php echo $query['username']; ?>">
+				  <input type="text" readonly class="form-control" value="<?php echo $query->username; ?>">
 				</div>
 				<br>
 				<div class="input-group">
@@ -52,13 +51,12 @@
 	
 				</form>
 				
-				
 				</fieldset>
 				<hr>
 				
 				<fieldset>
 				<legend>Edit Password</legend>
-				<form class="form" method="post" action="<?php echo site_url('pegawai/edit_passprofil');?>">
+				<form class="form" method="post" action="<?php echo site_url('pegawai/edit_passkasir');?>">
 				<div class="form-group">
 				<div class="input-group">
 				  <span class="input-group-addon">Password Baru</span>
@@ -79,10 +77,9 @@
 	
 				</form>
 				
-					
 				</fieldset>
 				</div>
 			</div>	
 		</div>
 	</div>
-<?php $this->load->view('admin/footer');?>
+<?php $this->load->view('kasir/footer');?>

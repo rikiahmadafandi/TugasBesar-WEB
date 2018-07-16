@@ -12,8 +12,8 @@
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="?menu=dashboard">Dashboard</a></li>
-            <li><a href="?menu=profil">Profile</a></li>
+            <li><a href="<?php echo site_url('kasir/dashboard');?>">Dashboard</a></li>
+            <li><a href="<?php echo site_url('kasir/profil');?>">Profile</a></li>
             </ul>
           
         </div>

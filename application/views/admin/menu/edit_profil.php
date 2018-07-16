@@ -6,15 +6,15 @@
 	<form method="post" action="<?php echo site_url('pegawai/eksekusi_profil');?>">
 	  <div class="form-group">
 		<label>Nama</label>
-		<input name="nama" type="text" class="form-control" value="<?php echo $query['nama']; ?>">
+		<input name="nama" type="text" class="form-control" value="<?php echo $query->nama; ?>">
 	  </div>
 	  <div class="form-group">
 		<label>Alamat</label>
-		<textarea name="alamat" class="form-control"><?php echo $query['alamat']; ?></textarea>
+		<textarea name="alamat" class="form-control"><?php echo $query->alamat; ?></textarea>
 	  </div>
 	  <div class="form-group">
 		<label>Telephon</label>
-		<input name="telephon" type="text" class="form-control" value="<?php echo $query['telephon']; ?>">
+		<input name="telephon" type="text" class="form-control" value="<?php echo $query->telephon; ?>">
 	  </div>
 	  
 		<input name="edit_profil" type="submit" class="btn btn-sm btn-success" value="Simpan">
@@ -41,4 +41,4 @@
 		</form>
   </div>
 	<div>
-<?php $this->load->view('admin/footer');?>
+<?php $this->load->view('kasir/footer');?>

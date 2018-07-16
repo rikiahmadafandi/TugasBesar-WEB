@@ -24,8 +24,15 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |
 */
 
+<<<<<<< HEAD
 $config['base_url'] = 'http://localhost:8080/TugasBesar-WEB';
 
+=======
+
+$config['base_url'] = 'http://localhost:8080/TugasBesar-WEB';
+
+
+>>>>>>> b70e305707d6058e74d4a9b93a6419be6b5fa956
 /*
 |--------------------------------------------------------------------------
 | Index File

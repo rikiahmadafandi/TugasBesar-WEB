@@ -1,9 +1,16 @@
+<?php
+//	$id_jual = $_GET['id_jual'];
+//	$q = mysqli_query($koneksi,"SELECT tb_jual.*,tb_kasir.* FROM tb_jual 
+//	INNER JOIN tb_kasir ON tb_kasir.id_kasir=tb_jual.id_kasir WHERE id_jual='$id_jual'");
+//	$d = mysqli_fetch_array($q);
+?>
 <?php $this->load->view('kasir/header');?>
 <?php $this->load->view('kasir/navigasi/navigasi_penjualan');?>
-<h4>Detail Penjualan</h4>
+	<h4>Detail Penjualan</h4>
 	<div class="row">
 	<div class="col-md-4">
 	<table class="table table-condensed">
+		<center>
 		<tr>
 			<th>Kode Penjualan</th> <td><?php echo $query2->id_jual; ?></td>
 		</tr>
@@ -15,8 +22,8 @@
 		</tr>
 			</table>
 		</div>
-
-		<div class="col-md-4">
+		
+	<div class="col-md-4">
 	<table class="table table-condensed">
 		<tr>
 			<th>Total Harga</th> <td>Rp.<?php echo number_format($query2->total,2); ?></td>
@@ -42,6 +49,11 @@
 			<th>Jumlah Harga</th>
 			</tr>
 		<?php
+		//	$no = 1;
+		//	$qbuku = mysqli_query($koneksi,"SELECT tb_penjualan.*,tb_buku.*
+		//			FROM tb_penjualan
+		//			INNER JOIN tb_buku ON tb_buku.id_buku=tb_penjualan.id_buku WHERE id_jual='$id_jual'");
+		//	while ($data = mysqli_fetch_array($qbuku)){
 
 		$no=1;
         foreach ($query3 as $d) { 
@@ -70,6 +82,7 @@
 				<a href="<?php echo site_url('kasir/detail_print/'.$query2->id_jual); ?>" class="btn btn-primary"><span class="glyphicon 
 				glyphicon-print"></span></a>
 			</center>
+		</div>
 	</div>
 	
 <?php $this->load->view('kasir/footer');?>

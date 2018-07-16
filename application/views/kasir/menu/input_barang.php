@@ -1,3 +1,25 @@
+<?php/*
+	$id_buku = $_GET['id_buku'];
+	$qbuku = mysqli_query($koneksi,"SELECT * FROM tb_buku WHERE id_buku='$id_buku'");
+	$buku = mysqli_fetch_array($qbuku);
+	
+	$qkode = mysqli_query($koneksi,"SELECT max(id_jual) from tb_jual");
+	$kode = mysqli_fetch_array($qkode);
+	if($kode)
+	{
+		$nilai = $kode[0];
+		$nilai = substr($nilai, 3);
+		$nilai =(int)$nilai;
+		$kodebaru = $nilai+1;
+		$kode_otomatis = "PJN".str_pad($kodebaru,4,"0",STR_PAD_LEFT);
+	}
+	else
+	{
+		$kode_otomatis ="PJN0001";
+	}*/
+	
+	?>
+
 <?php $this->load->view('kasir/header');?>
 <?php $this->load->view('kasir/navigasi/navigasi_input');?>
 <h4>Input Penjualan</h4>   
@@ -11,6 +33,21 @@
 		<input type="text" style="height: 0px; width: 0px; border: 0px;" name="harga_pokok" readonly="readonly" required="required" value="<?php echo $harga_pokok; ?>">
 <input type="submit" name="tambah" value="tambah ke keranjang" class="btn btn-primary">
 		</form>
+		<?php/*
+		if(isset($_POST['tambah'])){
+			$jumlah = $_POST['jumlah'];
+			$id_kasir = $profil['id_kasir'];
+			$jumlah_harga = $buku['harga_pokok'] * $jumlah;
+			mysqli_query($koneksi,"INSERT INTO tb_keranjang(id_buku,id_kasir,jumlah,jumlah_harga) VALUES('$id_buku','$id_kasir','$jumlah','$jumlah_harga')");
+			$updatestok = $buku['stok'] - $jumlah;
+			mysqli_query($koneksi," UPDATE tb_buku SET stok='$updatestok' WHERE id_buku='$id_buku'");*/
+		?>
+			<!--<div class="alert alert-success">
+				Berhasil Menambah Keranjang
+			</div>
+			<meta http-equiv="refresh" content="1; url='?menu=input_penjualan'">-->
+		<?php
+		//}
 		?>
 		<hr>
 		<h4> <span class="glyphicon glyphicon-shopping-cart"></span> Keranjang</h4>
@@ -25,7 +62,13 @@
 			<th>Jumlah Harga</th>
 			<th>Aksi</th>
 		</tr>
-
+		<?php /*
+			$no = 1;
+			$qkera = mysqli_query($koneksi,"SELECT tb_buku.*,tb_kasir.*,tb_keranjang.* FROM tb_keranjang
+			INNER JOIN tb_buku ON tb_buku.id_buku=tb_keranjang.id_buku 
+			INNER JOIN tb_kasir ON tb_kasir.id_kasir=tb_keranjang.id_kasir");
+			while ($data = mysqli_fetch_array($qkera)){ */
+		?>
 		<?php
 		$no=1;
         foreach ($query as $d) { ?>
@@ -48,6 +91,13 @@
 			<th class="text-right" colspan="6">Total Harga</th>
 			<td>
 			Rp. 
+				<?php/*
+					$qtotal = mysqli_query($koneksi," SELECT SUM(jumlah_harga) AS total FROM
+					tb_keranjang");
+					$total = mysqli_fetch_array($qtotal);
+					echo number_format($total['total'],2);*/
+					//echo number_format($total['jumlah_harga'],2)
+					?>
 					<?php
 					$sum = 0;
 		            foreach($query as $row){
@@ -78,6 +128,29 @@
 				</form>
 				</div>
 				<div class="col-md-4">
+				<?php /*
+					if(isset($_POST['proses'])){
+						$uang = $_POST['uang'];
+						$kembali = $uang - $total['total'];
+						
+						$tanggal = date('Y-m-d');
+						mysqli_query($koneksi, "INSERT INTO tb_penjualan(
+						id_buku,jumlah,jumlah_harga,id_jual) SELECT id_buku,
+						jumlah,jumlah_harga,'$kode_otomatis' from tb_keranjang");
+						
+						mysqli_query($koneksi,"INSERT INTO tb_jual(id_jual,total,uang,kembali,id_kasir,tanggal) 
+						VALUES('$kode_otomatis','$total[total]','$uang','$kembali','$profil[id_kasir]','$tanggal')");*/
+
+						//$no=1;
+        				//foreach ($query2 as $q) { 
+						?> 
+
+
+
+						<!-- INI YANG DIPOTONG-->
+
+							<?php// echo $tampil;?>
+
 						<blockquote>
 						<h3>
 						
