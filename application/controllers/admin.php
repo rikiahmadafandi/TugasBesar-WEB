@@ -180,8 +180,14 @@ class Admin extends CI_Controller {
 
 	function profil()
 	{
+<<<<<<< HEAD
+		$id_kasir= $this->session->userdata('username');
+		$query = $this->db->where('username', $id_kasir)->get('tb_kasir')->row_array();
+		// $query = $this->Mpegawai->getData_profil( "where id_kasir = '$id_kasir'");
+=======
 		$id_kasir= $this->session->userdata('id_kasir');
 		$query = $this->Mpegawai->getData_profil( "where id_kasir = '$id_kasir'");
+>>>>>>> b70e305707d6058e74d4a9b93a6419be6b5fa956
 		$data = array(
 					"query" => $query,
 				);
