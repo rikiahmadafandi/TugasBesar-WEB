@@ -1,5 +1,5 @@
-<?php $this->load->view('kasir/header');?>
-<?php $this->load->view('kasir/navigasi/navigasi_profil');?>
+<?php $this->load->view('admin/header');?>
+<?php $this->load->view('admin/navigasi/navigasi_profil');?>
 	<h3>Profin Anda</h3>
 		<div class="col-md-6">
 			<div class="panel panel-info">
@@ -30,7 +30,7 @@
 				<div class="panel-body">
 				<fieldset>
 				<legend>Edit Username</legend>
-				<form class="form" method="post" action="<?php echo site_url('pegawai/edit_userkasir');?>">
+				<form class="form" method="post" action="<?php echo site_url('pegawai/edit_profil');?>">
 				
 				<div class="input-group">
 				  <span class="input-group-addon">User Saat Ini</span>
@@ -56,7 +56,7 @@
 				
 				<fieldset>
 				<legend>Edit Password</legend>
-				<form class="form" method="post" action="<?php echo site_url('pegawai/edit_passkasir');?>">
+				<form class="form" method="post" action="<?php echo site_url('pegawai/edit_profil');?>">
 				<div class="form-group">
 				<div class="input-group">
 				  <span class="input-group-addon">Password Baru</span>
@@ -82,4 +82,4 @@
 			</div>	
 		</div>
 	</div>
-<?php $this->load->view('kasir/footer');?>
+<?php $this->load->view('admin/footer');?>

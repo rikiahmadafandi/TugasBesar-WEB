@@ -41,4 +41,4 @@
 		</form>
   </div>
 	<div>
-<?php $this->load->view('kasir/footer');?>
+<?php $this->load->view('admin/footer');?>
