@@ -77,8 +77,8 @@
 		<?php if($keranjang<=0) {echo "";} else { ?>
 		<div class="col-md-4">
 			<h1><small>Harga Total</small><br>
-				<?php
-		            echo number_format($total);
+				<?php echo "Rp.";
+		            echo number_format ($total);
 					?>
 			</h1>
 				<form action="<?php echo site_url('tambah_barang/total_harga');?>" class="form-inline" method="post">
